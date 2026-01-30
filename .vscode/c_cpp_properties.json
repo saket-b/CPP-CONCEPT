@@ -1,0 +1,15 @@
+{
+    "configurations": [
+        {
+            "name": "Mac",
+            "includePath": [
+                "${workspaceFolder}/**"
+            ],
+            "defines": [],
+            "compilerPath": "C/C++: Edit Configurations (UI)",
+            "intelliSenseMode": "macos-clang-x64",
+            "cppStandard": "c++17"
+        }
+    ],
+    "version": 4
+}

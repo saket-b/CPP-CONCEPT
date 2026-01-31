@@ -1,0 +1,5 @@
+if(EXISTS "/Users/saketbharti/CPP Concept/GTEST/build/myFirstProgram_test[1]_tests.cmake")
+  include("/Users/saketbharti/CPP Concept/GTEST/build/myFirstProgram_test[1]_tests.cmake")
+else()
+  add_test(myFirstProgram_test_NOT_BUILT myFirstProgram_test_NOT_BUILT)
+endif()

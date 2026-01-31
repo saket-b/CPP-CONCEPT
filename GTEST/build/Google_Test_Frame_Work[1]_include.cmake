@@ -1,0 +1,5 @@
+if(EXISTS "/Users/saketbharti/CPP Concept/GTEST/build/Google_Test_Frame_Work[1]_tests.cmake")
+  include("/Users/saketbharti/CPP Concept/GTEST/build/Google_Test_Frame_Work[1]_tests.cmake")
+else()
+  add_test(Google_Test_Frame_Work_NOT_BUILT Google_Test_Frame_Work_NOT_BUILT)
+endif()

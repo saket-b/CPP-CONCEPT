@@ -1,0 +1,5 @@
+if(EXISTS "/Users/saketbharti/CPP Concept/GTEST/build/Google_mock_test[1]_tests.cmake")
+  include("/Users/saketbharti/CPP Concept/GTEST/build/Google_mock_test[1]_tests.cmake")
+else()
+  add_test(Google_mock_test_NOT_BUILT Google_mock_test_NOT_BUILT)
+endif()

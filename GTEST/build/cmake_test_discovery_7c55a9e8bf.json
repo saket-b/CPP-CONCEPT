@@ -1,0 +1,27 @@
+{
+  "tests": 3,
+  "name": "AllTests",
+  "testsuites": [
+    {
+      "name": "MyDBTEST",
+      "tests": 3,
+      "testsuite": [
+        {
+          "name": "LoginTest",
+          "file": "\/Users\/saketbharti\/CPP Concept\/GTEST\/tests\/test_GooogleMock.cpp",
+          "line": 75
+        },
+        {
+          "name": "LoginTestwillOne",
+          "file": "\/Users\/saketbharti\/CPP Concept\/GTEST\/tests\/test_GooogleMock.cpp",
+          "line": 88
+        },
+        {
+          "name": "LoginTestRepeatdlyCall",
+          "file": "\/Users\/saketbharti\/CPP Concept\/GTEST\/tests\/test_GooogleMock.cpp",
+          "line": 104
+        }
+      ]
+    }
+  ]
+}

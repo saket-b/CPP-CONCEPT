@@ -1,0 +1,116 @@
+Start testing: Jan 30 21:47 IST
+----------------------------------------------------------
+1/4 Testing: MathTest.Add
+1/4 Test: MathTest.Add
+Command: "/Users/saketbharti/CPP Concept/GTEST/build/math_test" "--gtest_filter=MathTest.Add" "--gtest_also_run_disabled_tests"
+Directory: /Users/saketbharti/CPP Concept/GTEST/build
+"MathTest.Add" start time: Jan 30 21:47 IST
+Output:
+----------------------------------------------------------
+Note: Google Test filter = MathTest.Add
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from MathTest
+[ RUN      ] MathTest.Add
+[       OK ] MathTest.Add (0 ms)
+[----------] 1 test from MathTest (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (0 ms total)
+[  PASSED  ] 1 test.
+<end of output>
+Test time =   0.01 sec
+----------------------------------------------------------
+Test Passed.
+"MathTest.Add" end time: Jan 30 21:47 IST
+"MathTest.Add" time elapsed: 00:00:00
+----------------------------------------------------------
+
+2/4 Testing: MY_PROGRAM.Saket1
+2/4 Test: MY_PROGRAM.Saket1
+Command: "/Users/saketbharti/CPP Concept/GTEST/build/myFirstProgram_test" "--gtest_filter=MY_PROGRAM.Saket1" "--gtest_also_run_disabled_tests"
+Directory: /Users/saketbharti/CPP Concept/GTEST/build
+"MY_PROGRAM.Saket1" start time: Jan 30 21:47 IST
+Output:
+----------------------------------------------------------
+Note: Google Test filter = MY_PROGRAM.Saket1
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from MY_PROGRAM
+[ RUN      ] MY_PROGRAM.Saket1
+/Users/saketbharti/CPP Concept/GTEST/tests/test_myFirstProgram.cpp:5: Failure
+Expected equality of these values:
+  1
+  2
+
+[  FAILED  ] MY_PROGRAM.Saket1 (0 ms)
+[----------] 1 test from MY_PROGRAM (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (0 ms total)
+[  PASSED  ] 0 tests.
+[  FAILED  ] 1 test, listed below:
+[  FAILED  ] MY_PROGRAM.Saket1
+
+ 1 FAILED TEST
+<end of output>
+Test time =   0.00 sec
+----------------------------------------------------------
+Test Failed.
+"MY_PROGRAM.Saket1" end time: Jan 30 21:47 IST
+"MY_PROGRAM.Saket1" time elapsed: 00:00:00
+----------------------------------------------------------
+
+3/4 Testing: MY_PROGRAM.Saket2
+3/4 Test: MY_PROGRAM.Saket2
+Command: "/Users/saketbharti/CPP Concept/GTEST/build/myFirstProgram_test" "--gtest_filter=MY_PROGRAM.Saket2" "--gtest_also_run_disabled_tests"
+Directory: /Users/saketbharti/CPP Concept/GTEST/build
+"MY_PROGRAM.Saket2" start time: Jan 30 21:47 IST
+Output:
+----------------------------------------------------------
+Note: Google Test filter = MY_PROGRAM.Saket2
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from MY_PROGRAM
+[ RUN      ] MY_PROGRAM.Saket2
+[       OK ] MY_PROGRAM.Saket2 (0 ms)
+[----------] 1 test from MY_PROGRAM (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (0 ms total)
+[  PASSED  ] 1 test.
+<end of output>
+Test time =   0.00 sec
+----------------------------------------------------------
+Test Passed.
+"MY_PROGRAM.Saket2" end time: Jan 30 21:47 IST
+"MY_PROGRAM.Saket2" time elapsed: 00:00:00
+----------------------------------------------------------
+
+4/4 Testing: MY_PROGRAM.subtest1
+4/4 Test: MY_PROGRAM.subtest1
+Command: "/Users/saketbharti/CPP Concept/GTEST/build/myFirstProgram_test" "--gtest_filter=MY_PROGRAM.subtest1" "--gtest_also_run_disabled_tests"
+Directory: /Users/saketbharti/CPP Concept/GTEST/build
+"MY_PROGRAM.subtest1" start time: Jan 30 21:47 IST
+Output:
+----------------------------------------------------------
+Note: Google Test filter = MY_PROGRAM.subtest1
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from MY_PROGRAM
+[ RUN      ] MY_PROGRAM.subtest1
+[       OK ] MY_PROGRAM.subtest1 (0 ms)
+[----------] 1 test from MY_PROGRAM (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (0 ms total)
+[  PASSED  ] 1 test.
+<end of output>
+Test time =   0.00 sec
+----------------------------------------------------------
+Test Passed.
+"MY_PROGRAM.subtest1" end time: Jan 30 21:47 IST
+"MY_PROGRAM.subtest1" time elapsed: 00:00:00
+----------------------------------------------------------
+
+End testing: Jan 30 21:47 IST

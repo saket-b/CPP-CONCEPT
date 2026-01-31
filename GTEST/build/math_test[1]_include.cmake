@@ -1,0 +1,5 @@
+if(EXISTS "/Users/saketbharti/CPP Concept/GTEST/build/math_test[1]_tests.cmake")
+  include("/Users/saketbharti/CPP Concept/GTEST/build/math_test[1]_tests.cmake")
+else()
+  add_test(math_test_NOT_BUILT math_test_NOT_BUILT)
+endif()

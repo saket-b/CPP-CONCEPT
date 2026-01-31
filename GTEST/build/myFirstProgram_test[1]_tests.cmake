@@ -1,0 +1,7 @@
+add_test([=[MY_PROGRAM.Saket1]=]  [==[/Users/saketbharti/CPP Concept/GTEST/build/myFirstProgram_test]==] [==[--gtest_filter=MY_PROGRAM.Saket1]==] --gtest_also_run_disabled_tests)
+set_tests_properties([=[MY_PROGRAM.Saket1]=]  PROPERTIES DEF_SOURCE_LINE [==[/Users/saketbharti/CPP Concept/GTEST/tests/test_myFirstProgram.cpp:4]==] WORKING_DIRECTORY [==[/Users/saketbharti/CPP Concept/GTEST/build]==] SKIP_REGULAR_EXPRESSION [==[\[  SKIPPED \]]==])
+add_test([=[MY_PROGRAM.Saket2]=]  [==[/Users/saketbharti/CPP Concept/GTEST/build/myFirstProgram_test]==] [==[--gtest_filter=MY_PROGRAM.Saket2]==] --gtest_also_run_disabled_tests)
+set_tests_properties([=[MY_PROGRAM.Saket2]=]  PROPERTIES DEF_SOURCE_LINE [==[/Users/saketbharti/CPP Concept/GTEST/tests/test_myFirstProgram.cpp:8]==] WORKING_DIRECTORY [==[/Users/saketbharti/CPP Concept/GTEST/build]==] SKIP_REGULAR_EXPRESSION [==[\[  SKIPPED \]]==])
+add_test([=[MY_PROGRAM.subtest1]=]  [==[/Users/saketbharti/CPP Concept/GTEST/build/myFirstProgram_test]==] [==[--gtest_filter=MY_PROGRAM.subtest1]==] --gtest_also_run_disabled_tests)
+set_tests_properties([=[MY_PROGRAM.subtest1]=]  PROPERTIES DEF_SOURCE_LINE [==[/Users/saketbharti/CPP Concept/GTEST/tests/test_myFirstProgram.cpp:12]==] WORKING_DIRECTORY [==[/Users/saketbharti/CPP Concept/GTEST/build]==] SKIP_REGULAR_EXPRESSION [==[\[  SKIPPED \]]==])
+set(  myFirstProgram_test_TESTS MY_PROGRAM.Saket1 MY_PROGRAM.Saket2 MY_PROGRAM.subtest1)

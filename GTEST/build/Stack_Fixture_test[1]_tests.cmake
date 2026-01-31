@@ -1,0 +1,5 @@
+add_test([=[stackTest.PopTest]=]  [==[/Users/saketbharti/CPP Concept/GTEST/build/Stack_Fixture_test]==] [==[--gtest_filter=stackTest.PopTest]==] --gtest_also_run_disabled_tests)
+set_tests_properties([=[stackTest.PopTest]=]  PROPERTIES DEF_SOURCE_LINE [==[/Users/saketbharti/CPP Concept/GTEST/tests/test_Stack_Fixture.cpp:15]==] WORKING_DIRECTORY [==[/Users/saketbharti/CPP Concept/GTEST/build]==] SKIP_REGULAR_EXPRESSION [==[\[  SKIPPED \]]==])
+add_test([=[stackTest.PopTest2]=]  [==[/Users/saketbharti/CPP Concept/GTEST/build/Stack_Fixture_test]==] [==[--gtest_filter=stackTest.PopTest2]==] --gtest_also_run_disabled_tests)
+set_tests_properties([=[stackTest.PopTest2]=]  PROPERTIES DEF_SOURCE_LINE [==[/Users/saketbharti/CPP Concept/GTEST/tests/test_Stack_Fixture.cpp:25]==] WORKING_DIRECTORY [==[/Users/saketbharti/CPP Concept/GTEST/build]==] SKIP_REGULAR_EXPRESSION [==[\[  SKIPPED \]]==])
+set(  Stack_Fixture_test_TESTS stackTest.PopTest stackTest.PopTest2)

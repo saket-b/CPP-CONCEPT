@@ -1,0 +1,2 @@
+/usr/bin/ar qc libcore_lib.a CMakeFiles/core_lib.dir/src/math.cpp.o CMakeFiles/core_lib.dir/src/myFirstProgram.cpp.o CMakeFiles/core_lib.dir/src/stack.cpp.o
+/usr/bin/ranlib libcore_lib.a

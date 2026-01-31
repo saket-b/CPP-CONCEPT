@@ -1,0 +1,7 @@
+add_test([=[MyDBTEST.LoginTest]=]  [==[/Users/saketbharti/CPP Concept/GTEST/build/Google_mock_test]==] [==[--gtest_filter=MyDBTEST.LoginTest]==] --gtest_also_run_disabled_tests)
+set_tests_properties([=[MyDBTEST.LoginTest]=]  PROPERTIES DEF_SOURCE_LINE [==[/Users/saketbharti/CPP Concept/GTEST/tests/test_GooogleMock.cpp:75]==] WORKING_DIRECTORY [==[/Users/saketbharti/CPP Concept/GTEST/build]==] SKIP_REGULAR_EXPRESSION [==[\[  SKIPPED \]]==])
+add_test([=[MyDBTEST.LoginTestwillOne]=]  [==[/Users/saketbharti/CPP Concept/GTEST/build/Google_mock_test]==] [==[--gtest_filter=MyDBTEST.LoginTestwillOne]==] --gtest_also_run_disabled_tests)
+set_tests_properties([=[MyDBTEST.LoginTestwillOne]=]  PROPERTIES DEF_SOURCE_LINE [==[/Users/saketbharti/CPP Concept/GTEST/tests/test_GooogleMock.cpp:88]==] WORKING_DIRECTORY [==[/Users/saketbharti/CPP Concept/GTEST/build]==] SKIP_REGULAR_EXPRESSION [==[\[  SKIPPED \]]==])
+add_test([=[MyDBTEST.LoginTestRepeatdlyCall]=]  [==[/Users/saketbharti/CPP Concept/GTEST/build/Google_mock_test]==] [==[--gtest_filter=MyDBTEST.LoginTestRepeatdlyCall]==] --gtest_also_run_disabled_tests)
+set_tests_properties([=[MyDBTEST.LoginTestRepeatdlyCall]=]  PROPERTIES DEF_SOURCE_LINE [==[/Users/saketbharti/CPP Concept/GTEST/tests/test_GooogleMock.cpp:104]==] WORKING_DIRECTORY [==[/Users/saketbharti/CPP Concept/GTEST/build]==] SKIP_REGULAR_EXPRESSION [==[\[  SKIPPED \]]==])
+set(  Google_mock_test_TESTS MyDBTEST.LoginTest MyDBTEST.LoginTestwillOne MyDBTEST.LoginTestRepeatdlyCall)

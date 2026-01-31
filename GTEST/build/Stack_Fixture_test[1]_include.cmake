@@ -1,0 +1,5 @@
+if(EXISTS "/Users/saketbharti/CPP Concept/GTEST/build/Stack_Fixture_test[1]_tests.cmake")
+  include("/Users/saketbharti/CPP Concept/GTEST/build/Stack_Fixture_test[1]_tests.cmake")
+else()
+  add_test(Stack_Fixture_test_NOT_BUILT Stack_Fixture_test_NOT_BUILT)
+endif()

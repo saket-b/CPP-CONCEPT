@@ -1,0 +1,5 @@
+---
+triple:          'arm64-apple-darwin'
+binary-path:     '/Users/saketbharti/CPP Concept/SOCKET_PROGRAMMING/server'
+relocations:     []
+...

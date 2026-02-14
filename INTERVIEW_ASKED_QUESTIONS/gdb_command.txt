@@ -1,0 +1,5 @@
+run
+next
+q for quit
+b-> break point 
+source gdb_bp

@@ -12,13 +12,10 @@ class Number{
         x = iX;
     }
 
-    Number & operator+(Number &temp)
+    Number  operator+(Number &temp)
     {
-        if( this != &temp)
-        {
-            this->x += temp.x;
-        }
-        return *this;
+        Number sum( this->x +temp.x);
+        return sum;
     }
     void Display()
     {

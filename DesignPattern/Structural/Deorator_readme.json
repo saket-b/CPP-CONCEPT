@@ -1,0 +1,165 @@
+Decorator pattern solves this by adding behavior dynamically at runtime.
+
+
+Decorator
+Attach additional responsibilities to an object dynamically. Decorators provide a flexible alternative to subclassing for extending functionality. The pattern has structural purpose and applies to objects.
+
+When to use
+to add responsibilities to individual objects dynamically and transparently, that is, without affecting other objects
+for responsibilities that can be withdrawn
+when extension by subclassing is impractical
+
+=======================
+
+Base Price = 1000
++ Discount
++ Tax
++ Service Fee
+
+Each step adds behavior, not replaces it.
+
+👉 That’s Decorator
+
+🏗️ Design
+1️⃣ Component
+class Price {
+public:
+    virtual int getPrice() = 0;
+    virtual ~Price() {}
+};
+2️⃣ Base Component
+class BasePrice : public Price {
+public:
+    int getPrice() override {
+        return 1000;
+    }
+};
+3️⃣ Decorator Base
+class PriceDecorator : public Price {
+protected:
+    Price* price;
+
+public:
+    PriceDecorator(Price* p) : price(p) {}
+};
+4️⃣ Concrete Decorators
+Discount
+class DiscountDecorator : public PriceDecorator {
+public:
+    DiscountDecorator(Price* p) : PriceDecorator(p) {}
+
+    int getPrice() override {
+        return price->getPrice() - 100;
+    }
+};
+Tax
+class TaxDecorator : public PriceDecorator {
+public:
+    TaxDecorator(Price* p) : PriceDecorator(p) {}
+
+    int getPrice() override {
+        return price->getPrice() + 50;
+    }
+};
+Service Fee
+class FeeDecorator : public PriceDecorator {
+public:
+    FeeDecorator(Price* p) : PriceDecorator(p) {}
+
+    int getPrice() override {
+        return price->getPrice() + 20;
+    }
+};
+🚀 Usage (very important)
+Price* price = new BasePrice();
+
+price = new DiscountDecorator(price);
+price = new TaxDecorator(price);
+price = new FeeDecorator(price);
+
+cout << price->getPrice();
+
+
+==================
+
+class BookingPrice {
+public:
+    virtual int getPrice() = 0;
+    virtual ~BookingPrice() {}
+};
+Step 2 — Base Price
+class BaseBookingPrice : public BookingPrice {
+    int base;
+
+public:
+    BaseBookingPrice(int b) : base(b) {}
+
+    int getPrice() override {
+        return base;
+    }
+};
+Step 3 — Decorator Base
+class BookingPriceDecorator : public BookingPrice {
+protected:
+    BookingPrice* price;
+
+public:
+    BookingPriceDecorator(BookingPrice* p) : price(p) {}
+};
+Step 4 — Now YOU think (important)
+
+We need 3 decorators:
+
+Coupon
+Loyalty Discount
+Tax
+
+👉 Let’s build one together.
+
+Coupon Decorator
+class CouponDecorator : public BookingPriceDecorator {
+    int couponValue;
+
+public:
+    CouponDecorator(BookingPrice* p, int c)
+        : BookingPriceDecorator(p), couponValue(c) {}
+
+    int getPrice() override {
+        return price->getPrice() - couponValue;
+    }
+};
+
+Loyalty Decorator
+class LoyaltyDecorator : public BookingPriceDecorator {
+    int loyaltyDiscount;
+
+public:
+    LoyaltyDecorator(BookingPrice* p, int d)
+        : BookingPriceDecorator(p), loyaltyDiscount(d) {}
+
+    int getPrice() override {
+        return price->getPrice() - loyaltyDiscount;
+    }
+};
+Tax Decorator
+class TaxDecorator : public BookingPriceDecorator {
+    int tax;
+
+public:
+    TaxDecorator(BookingPrice* p, int t)
+        : BookingPriceDecorator(p), tax(t) {}
+
+    int getPrice() override {
+        return price->getPrice() + tax;
+    }
+};
+Final Usage (very important)
+int main() {
+    BookingPrice* price = new BaseBookingPrice(1000);
+
+    price = new CouponDecorator(price, 100);
+    price = new LoyaltyDecorator(price, 50);
+    price = new TaxDecorator(price, 80);
+
+    cout << price->getPrice();
+}

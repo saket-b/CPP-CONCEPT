@@ -1,0 +1,38 @@
+Factory Method → creates one product
+
+==============
+
+class Pricing {
+public:
+    virtual int calculatePrice() = 0;
+    virtual ~Pricing() {}
+};
+Concrete classes
+class AmadeusPricing : public Pricing {
+public:
+    int calculatePrice() override {
+        return 100;
+    }
+};
+
+class SabrePricing : public Pricing {
+public:
+    int calculatePrice() override {
+        return 200;
+    }
+};
+Factory
+class PricingFactory {
+public:
+    static Pricing* createPricing(string provider) {
+        if(provider == "Amadeus")
+            return new AmadeusPricing();
+        else if(provider == "Sabre")
+            return new SabrePricing();
+
+        return nullptr;
+    }
+};
+Usage
+Pricing* pricing = PricingFactory::createPricing("Amadeus");
+pricing->calculatePrice();

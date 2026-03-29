@@ -1,0 +1,103 @@
+Suppose you have a payment system.
+
+Different ways to pay:
+
+Credit Card
+
+PayPal
+
+UPI
+
+A bad design might look like this:
+
+if(paymentType == "card")
+    payByCard();
+else if(paymentType == "paypal")
+    payByPaypal();
+else if(paymentType == "upi")
+    payByUPI();
+
+Problems:
+
+Many if-else
+
+Hard to extend
+
+Violates Open/Closed Principle
+
+Strategy pattern solves this by encapsulating algorithms into separate classes.
+
+2️⃣ Core Idea
+
+Instead of if-else, create separate strategy classes.
+
+PaymentStrategy
+     |
+-----------------------------
+|            |              |
+CardPay   PayPalPay      UpiPay
+
+uses in 
+
+SortStrategy
+   |
+QuickSort
+MergeSort
+HeapSort
+
+===========================================
+RatePlanStrategy
+   |
+-------------------------
+|          |            |
+Refundable NonRefund  Corporate
+
+Now let’s turn this into a proper interview-level design in C++.
+
+Step 1 — Strategy Interface
+class RatePlanStrategy {
+public:
+    virtual int calculatePrice(int basePrice) = 0;
+    virtual ~RatePlanStrategy() {}
+};
+Step 2 — Concrete Strategies
+class RefundablePlan : public RatePlanStrategy {
+public:
+    int calculatePrice(int basePrice) override {
+        return basePrice + 200; // flexible, higher cost
+    }
+};
+
+class NonRefundablePlan : public RatePlanStrategy {
+public:
+    int calculatePrice(int basePrice) override {
+        return basePrice - 100; // cheaper, no refund
+    }
+};
+
+class CorporatePlan : public RatePlanStrategy {
+public:
+    int calculatePrice(int basePrice) override {
+        return basePrice - 150; // corporate discount
+    }
+};
+Step 3 — Context (very important)
+class PricingEngine {
+private:
+    RatePlanStrategy* strategy;
+
+public:
+    PricingEngine(RatePlanStrategy* s) : strategy(s) {}
+
+    int getFinalPrice(int basePrice) {
+        return strategy->calculatePrice(basePrice);
+    }
+};
+Step 4 — Usage (like your system)
+int main() {
+    RatePlanStrategy* strategy = new RefundablePlan();
+
+    PricingEngine engine(strategy);
+
+    cout << engine.getFinalPrice(1000);
+}

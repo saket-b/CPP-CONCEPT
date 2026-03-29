@@ -1,0 +1,112 @@
+Builder
+Builder pattern has creational purpose and separates the construction of a complex object
+ from its representation so that the same construction process can create different representations. 
+ It is object pattern, ie. relationships can be changed at run-time and are more dynamic. 
+ Often is used for building composite structures but constructing objects requires more domain 
+ knowledge of the client than using a Factory.
+
+When to use
+the algorithm for creating a object should be independent of the parts and how they're assembled
+the construction process must allow different representations for the object that's constructed
+
+eg :
+// complex object means
+HttpRequest req = HttpRequestBuilder()
+                    .setURL("/users")
+                    .setMethod("POST")
+                    .setHeader("Auth")
+                    .setBody(data)
+                    .build();
+
+Short interview definition
+
+A complex object is an object that:
+
+has many attributes
+
+may require step-by-step configuration
+
+may have optional parameters
+
+requires controlled construction process
+
+Builder pattern helps construct such objects incrementally.
+
+Computer c("i9", 32, "RTX4090", "2TB SSD", "ASUS", "850W", true, true);
+// we can miss some data 
+
+==============
+Step 2 — Product Class
+class HotelSearchRequest {
+public:
+    string location;
+    string checkIn;
+    string checkOut;
+    int guests;
+    int rooms;
+    string currency;
+    string filter;
+    string sort;
+
+    void print() {
+        cout << location << " " << checkIn << " " << checkOut << endl;
+    }
+};
+Step 3 — Builder Class
+class HotelSearchRequestBuilder {
+private:
+    HotelSearchRequest req;
+
+public:
+    HotelSearchRequestBuilder& setLocation(string loc) {
+        req.location = loc;
+        return *this;
+    }
+
+    HotelSearchRequestBuilder& setCheckIn(string date) {
+        req.checkIn = date;
+        return *this;
+    }
+
+    HotelSearchRequestBuilder& setCheckOut(string date) {
+        req.checkOut = date;
+        return *this;
+    }
+
+    HotelSearchRequestBuilder& setGuests(int g) {
+        req.guests = g;
+        return *this;
+    }
+
+    HotelSearchRequestBuilder& setRooms(int r) {
+        req.rooms = r;
+        return *this;
+    }
+
+    HotelSearchRequestBuilder& setCurrency(string c) {
+        req.currency = c;
+        return *this;
+    }
+
+    HotelSearchRequestBuilder& setFilter(string f) {
+        req.filter = f;
+        return *this;
+    }
+
+    HotelSearchRequest build() {
+        return req;
+    }
+};
+Step 4 — Usage (Very important)
+int main() {
+    HotelSearchRequest request = HotelSearchRequestBuilder()
+        .setLocation("Bangalore")
+        .setCheckIn("2026-04-01")
+        .setCheckOut("2026-04-05")
+        .setGuests(2)
+        .setRooms(1)
+        .setCurrency("INR")
+        .build();
+
+    request.print();
+}

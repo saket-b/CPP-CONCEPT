@@ -1,0 +1,88 @@
+/******************************************************************************
+
+Welcome to GDB Online.
+  GDB online is an online compiler and debugger tool for C, C++, Python, PHP, Ruby, 
+  C#, OCaml, VB, Perl, Swift, Prolog, Javascript, Pascal, COBOL, HTML, CSS, JS
+  Code, Compile, Run and Debug online from anywhere in world.
+
+*******************************************************************************/
+#include <stdio.h>
+
+int main()
+{
+    printf("Hello World");
+
+    return 0;
+}
+
+
+Given a Claims table with 100 million records, a query filtering by:
+WHERE PatientID = 12345 AND ClaimDate BETWEEN '2025-01-01' AND '2025-01-31'
+soln
+select * from Claims where PatientID = 12345 
+AND BETWEEN date = '2025-01-01' AND  date ='2025-01-31';
+
+What index would you create and why?
+soln
+Index : Index is used to store the address of query.
+Why : We can access data fast;
+
+In claims processing, duplicate claims can occur.
+Write a query to identify duplicate claims based on:
+PatientID
+DrugCode
+ClaimDate
+Amount
+
+soln
+select PatientID, DrugCode, ClaimDate, Amount from Claims where count(PatientID) > 1;
+
+
+
+4. You are processing pharmacy claims in a high-volume system. 
+Each claim has a claimId and an amount. Multiple threads may 
+process claims concurrently.
+Write a thread-safe C++ class that: Accepts claims Maintains 
+the total approved amount. Allows safe access in a multi-threaded environment
+
+mutex m;
+class Claim{
+    
+    private:
+    int claimId;
+    int amount;
+    static Claim *instance;
+    Claim(int claimId, int amount) : claimId(claimId), amount(amount){}
+    public:
+
+    int getTotalAmount()
+    {
+        return amount;
+    }
+    Claim * getInstance(int claimId, int amount){
+        
+        if( instance == nullptr)
+        {
+            uniqu_lock<mutex>lock(m);
+            if( instance == nullptr)
+                instance = new Claim(claimId, amount);
+        }
+        return instance;
+    }
+};
+Claim*Claim :: instance = nullptr;
+ 
+ 5. .You have a table Claims: Claims ------- 
+ ClaimId PharmacyId ClaimStatus SubmittedDate 
+ ProcessedDate Write a SQL query to calculate the average 
+ processing time (in seconds) for approved claims per pharmacy in 
+ the last 30 days.
+ 
+ select ClaimId, PharmacyId, ClaimStatus, SubmittedDate, 
+ avg(Sec(SubmittedDate))
+ from Claims where BETWEEN SubmittedDate = today and SubmittedDate = today-30;
+ 
+ 
+ 
+ 
+ 

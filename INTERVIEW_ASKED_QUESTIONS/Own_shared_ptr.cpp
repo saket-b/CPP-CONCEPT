@@ -95,6 +95,7 @@ int main()
 
     My_Shared_ptr<Base>p2(p1);
 
+    p2->Display();
     cout<<p1.useCount()<<endl;
     cout<<p2.useCount()<<endl;
     p1->Display();
